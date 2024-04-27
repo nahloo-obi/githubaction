@@ -15,7 +15,7 @@ def main():
 def your_script_logic(input_value):
     # Your script logic here
     # This is just an example; replace it with your actual script logic
-    return f"The input value must and will be: {input_value}"
+    return f"The input value must and will beee: {input_value}"
 
 if __name__ == "__main__":
     main()
