@@ -31109,9 +31109,11 @@ const getBenchmarkValue = core.getInput('benchmark');
  const pid = execSync(pidCommand).toString().trim();
 
  const path_to_script = __nccwpck_require__.ab + "pythonscript.py";
+ console.log('Result of Python script hereee:');
 
 // Execute the Python script with the input value using the shell command
-const getScriptResult = execSync(`python ${path_to_script} ${pid} ${getBenchmarkValue}`).toString().trim();
+const getScriptResult = execSync(`python ${path_to_script} ${getBenchmarkValue}`).toString().trim();
+//const getScriptResult = execSync(`python ${path_to_script} ${pid} ${getBenchmarkValue}`).toString().trim();
 
 console.log('Result of Python script:', getScriptResult);
 core.setOutput("scriptresult", getScriptResult);
