@@ -10,16 +10,15 @@ def get_ram_usage():
                 
         # # Get process object
         application_process_ID = int(script_first_value)
-        print("get datatype")
-        print(type(application_process_ID))
-        # operation = psutil.Process(application_process_ID)
-
-        # # # Get memory usage
-        # info_mem = operation.memory_info()
-        # usage_mem_mb = info_mem.rss / 1024 / 1024
         
-        #return usage_mem_mb
-        return 3
+        operation = psutil.Process(application_process_ID)
+
+        # # Get memory usage
+        info_mem = operation.memory_info()
+        usage_mem_mb = info_mem.rss / 1024 / 1024
+        
+        return usage_mem_mb
+        
         # if usage_mem_mb > benchmarkValue:
         #     raise ValueError(f"Analysis failed.")
         # else:
