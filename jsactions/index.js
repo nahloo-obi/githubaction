@@ -10,9 +10,7 @@ try {
 const getBenchmarkValue = core.getInput('benchmark');
 console.log('benchmark value:', getBenchmarkValue);
 
- // Run the Django application using the manage.py script
-//  const appCommand = 'python manage.py runserver 0.0.0.0:8000 &';
-//  execSync(appCommand);
+
  // Wait for a moment to ensure the Django app starts up
  await new Promise(resolve => setTimeout(resolve, 5000));
 
@@ -21,25 +19,17 @@ console.log('benchmark value:', getBenchmarkValue);
  const pidCommand = 'pgrep -f \'python manage.py runserver\'';
  const pid = execSync(pidCommand).toString().trim();
  var stringarray = pid.split(/(\s+)/).filter( function(e) { return e.trim().length > 0; } );
-
- const pidValue = pid.split(" ")[0];
-
-
- console.log('Result of Python script pid hereee:', pidValue);
- console.log('Result of Python script pid string hereee:', stringarray);
- console.log('Result of Python script pid first string hereee:', stringarray[0]);
-
-
+ const processId = stringarray[0]
 
  const path_to_script = path.join(__dirname, 'scripts', 'pythonscript.py');
  console.log('Result of Python script hereee:', path_to_script);
 
 // Execute the Python script with the input value using the shell command
-const getScriptResult = execSync(`python ${path_to_script} ${getBenchmarkValue}`).toString().trim();
+const getScriptResult = execSync(`python ${path_to_script} ${processId} ${getBenchmarkValue}`).toString().trim();
 core.setOutput("performanceresult", getScriptResult);
 
 // if (pid && getBenchmarkValue) {
-//     const getScriptResult = execSync(`python ${path_to_script} ${pid} ${getBenchmarkValue}`).toString().trim();
+//     const getScriptResult = execSync(`python ${path_to_script} ${processId} ${getBenchmarkValue}`).toString().trim();
 //     // Process the result as needed
 //     core.setOutput("performanceresult", getScriptResult);
 
