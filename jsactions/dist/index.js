@@ -31108,7 +31108,9 @@ console.log('benchmark value:', getBenchmarkValue);
  // Get the process ID of the running Django application
  const pidCommand = 'pgrep -f \'python manage.py runserver\'';
  const pid = execSync(pidCommand).toString().trim();
- console.log('Result of Python script pid hereee:', pid);
+ const pidValue = pid.split(" ")[0];
+
+ console.log('Result of Python script pid hereee:', pidValue);
 
  const path_to_script = __nccwpck_require__.ab + "pythonscript.py";
  console.log('Result of Python script hereee:', __nccwpck_require__.ab + "pythonscript.py");
