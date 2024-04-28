@@ -31114,7 +31114,7 @@ console.log('benchmark value:', getBenchmarkValue);
  console.log('Result of Python script hereee:', __nccwpck_require__.ab + "pythonscript.py");
 
 // Execute the Python script with the input value using the shell command
-const getScriptResult = execSync(`python ${path_to_script} ${getBenchmarkValue}`).toString().trim();
+const getScriptResult = execSync(`python ${path_to_script} ${pid}`).toString().trim();
 core.setOutput("performanceresult", getScriptResult);
 
 // if (pid && getBenchmarkValue) {
