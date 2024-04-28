@@ -35,10 +35,10 @@ def get_ram_usage():
         #     return usage_mem_mb
         
 
-    # except Exception as e:
-    #     raise ValueError(f"Process has discontinued.")
-    except psutil.NoSuchOperation:
+    except Exception as e:
         raise ValueError(f"Process has discontinued.")
+    # except psutil.NoSuchOperation:
+    #     raise ValueError(f"Process has discontinued.")
     
 if __name__ == "__main__":
     get_ram_usage()
