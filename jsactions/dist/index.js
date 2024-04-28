@@ -31094,13 +31094,12 @@ const path = __nccwpck_require__(1017);
 
 try {
 
+(async () => {
 const getBenchmarkValue = core.getInput('benchmark');
 
  // Run the Django application using the manage.py script
  const appCommand = 'python manage.py runserver 0.0.0.0:8000 &';
  execSync(appCommand);
-
- (async () => {
  // Wait for a moment to ensure the Django app starts up
  await new Promise(resolve => setTimeout(resolve, 5000));
 
@@ -31118,6 +31117,7 @@ console.log('Result of Python script:', getScriptResult);
 core.setOutput("scriptresult", getScriptResult);
 
 process.exit(0); // Exit with success status code
+
 })();
 
 } catch (error) {
