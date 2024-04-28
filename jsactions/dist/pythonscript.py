@@ -43,4 +43,5 @@ def get_ram_usage():
     #     raise ValueError(f"Process has discontinued.")
     
 if __name__ == "__main__":
-    get_ram_usage()
+    ram_usage = get_ram_usage()
+    print(ram_usage)
