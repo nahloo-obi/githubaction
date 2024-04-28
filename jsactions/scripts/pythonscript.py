@@ -19,8 +19,11 @@ def get_ram_usage():
         #     return benchmarkValue
         # print('here in python')
         # print(input_value)
-        return django_pid
-
+        if django_pid:
+            return django_pid
+        else:
+            return input_value
+                
         # print(f"Django Process PID: {django_pid}")
         # # Get process object
         # operation = psutil.Process(django_pid)
