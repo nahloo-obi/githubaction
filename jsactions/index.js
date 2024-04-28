@@ -22,9 +22,10 @@ console.log('benchmark value:', getBenchmarkValue);
  const pid = execSync(pidCommand).toString().trim();
  const pidValue = pid.split(" ")[0];
 
+ console.log(typeof pid)
+
  console.log('Result of Python script pid hereee:', pidValue);
 
- console.log('Result of Python script pidddd hereee:', pidValue);
 
 
  const path_to_script = path.join(__dirname, 'scripts', 'pythonscript.py');
