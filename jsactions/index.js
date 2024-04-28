@@ -11,8 +11,8 @@ const getBenchmarkValue = core.getInput('benchmark');
 console.log('benchmark value:', getBenchmarkValue);
 
  // Run the Django application using the manage.py script
- const appCommand = 'python manage.py runserver 0.0.0.0:8000 &';
- execSync(appCommand);
+//  const appCommand = 'python manage.py runserver 0.0.0.0:8000 &';
+//  execSync(appCommand);
  // Wait for a moment to ensure the Django app starts up
  await new Promise(resolve => setTimeout(resolve, 5000));
 
