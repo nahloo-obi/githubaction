@@ -4,6 +4,8 @@ import sys
 
 def get_ram_usage():
     try:
+        django_pid = None
+        
         for process in psutil.process_iter(['pid', 'name']):
             
         # Check if the process name matches 'python' and 'manage.py'
