@@ -27,7 +27,7 @@ console.log('benchmark value:', getBenchmarkValue);
 
  console.log('Result of Python script pid hereee:', pidValue);
  console.log('Result of Python script pid string hereee:', stringarray);
- console.log(typeof stringarray)
+ console.log('Result of Python script pid first string hereee:', stringarray[0]);
 
 
 
