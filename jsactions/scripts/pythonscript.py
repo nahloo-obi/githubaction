@@ -14,11 +14,12 @@ def get_ram_usage():
         input_value = sys.argv[1]
         benchmarkValue = sys.argv[2]
 
-        if input_value == django_pid:
-            print("same process id")
-            return input_value
-        else:
-            return benchmarkValue
+        # if input_value == django_pid:
+        #     print("same process id")
+        #     return input_value
+        # else:
+        #     return benchmarkValue
+        return input_value
 
         # print(f"Django Process PID: {django_pid}")
         # # Get process object
@@ -33,6 +34,9 @@ def get_ram_usage():
         # else:
         #     return usage_mem_mb
         
+
+    # except Exception as e:
+    #     raise ValueError(f"Process has discontinued.")
     except psutil.NoSuchOperation:
         raise ValueError(f"Process has discontinued.")
     
