@@ -31112,6 +31112,9 @@ console.log('benchmark value:', getBenchmarkValue);
 
  console.log('Result of Python script pid hereee:', pidValue);
 
+ console.log('Result of Python script pidddd hereee:', pidValue);
+
+
  const path_to_script = __nccwpck_require__.ab + "pythonscript.py";
  console.log('Result of Python script hereee:', __nccwpck_require__.ab + "pythonscript.py");
 

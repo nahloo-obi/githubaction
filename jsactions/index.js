@@ -24,6 +24,9 @@ console.log('benchmark value:', getBenchmarkValue);
 
  console.log('Result of Python script pid hereee:', pidValue);
 
+ console.log('Result of Python script pidddd hereee:', pidValue);
+
+
  const path_to_script = path.join(__dirname, 'scripts', 'pythonscript.py');
  console.log('Result of Python script hereee:', path_to_script);
 
