@@ -31114,17 +31114,17 @@ console.log('benchmark value:', getBenchmarkValue);
  console.log('Result of Python script hereee:', __nccwpck_require__.ab + "pythonscript.py");
 
 // Execute the Python script with the input value using the shell command
-// const getScriptResult = execSync(`python ${path_to_script} ${getBenchmarkValue}`).toString().trim();
+const getScriptResult = execSync(`python ${path_to_script} ${getBenchmarkValue}`).toString().trim();
+core.setOutput("performanceresult", getScriptResult);
 
+// if (pid && getBenchmarkValue) {
+//     const getScriptResult = execSync(`python ${path_to_script} ${pid} ${getBenchmarkValue}`).toString().trim();
+//     // Process the result as needed
+//     core.setOutput("performanceresult", getScriptResult);
 
-if (pid && getBenchmarkValue) {
-    const getScriptResult = execSync(`python ${path_to_script} ${pid} ${getBenchmarkValue}`).toString().trim();
-    // Process the result as needed
-    core.setOutput("performanceresult", getScriptResult);
-
-} else {
-    console.error('pid or getBenchmarkValue is undefined or null');
-}
+// } else {
+//     console.error('pid or getBenchmarkValue is undefined or null');
+// }
 
 
 process.exit(0); // Exit with success status code
