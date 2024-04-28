@@ -31108,11 +31108,14 @@ console.log('benchmark value:', getBenchmarkValue);
  // Get the process ID of the running Django application
  const pidCommand = 'pgrep -f \'python manage.py runserver\'';
  const pid = execSync(pidCommand).toString().trim();
+ var stringarray = pid.split(/(\s+)/).filter( function(e) { return e.trim().length > 0; } );
+
  const pidValue = pid.split(" ")[0];
 
- console.log(typeof pid)
 
  console.log('Result of Python script pid hereee:', pidValue);
+ console.log('Result of Python script pid string hereee:', stringarray);
+
 
 
 
