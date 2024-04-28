@@ -44,4 +44,4 @@ def get_ram_usage():
     
 if __name__ == "__main__":
     ram_usage = get_ram_usage()
-    print(ram_usage)
+    #print(ram_usage)
