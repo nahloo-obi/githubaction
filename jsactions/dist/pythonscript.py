@@ -12,9 +12,6 @@ def get_ram_usage():
         #         django_pid = process.info['pid']
         
         input_value = sys.argv[1]
-        #benchmarkValue = sys.argv[2]
-        print("Command-line arguments:", sys.argv)
-
         # if input_value == django_pid:
         #     print("same process id")
         #     return input_value
