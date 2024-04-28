@@ -22,10 +22,11 @@ console.log('benchmark value:', getBenchmarkValue);
  const processId = stringarray[0]
 
  const path_to_script = path.join(__dirname, 'scripts', 'pythonscript.py');
- console.log('Result of Python script hereee:', path_to_script);
 
 // Execute the Python script with the input value using the shell command
 const getScriptResult = execSync(`python ${path_to_script} ${processId} ${getBenchmarkValue}`).toString().trim();
+console.log('Result of ram usage hereee:', getScriptResult);
+
 core.setOutput("performanceresult", getScriptResult);
 
 // if (pid && getBenchmarkValue) {
