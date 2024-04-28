@@ -4,19 +4,22 @@ import sys
 
 def get_ram_usage():
     try:
-        
-        application_process_ID = sys.argv[1]
+        #get script arguments from javascript
+        script_first_value = sys.argv[1]
         BENCHMARK_VALUE = sys.argv[2]
                 
-        # print(f"Django Process PID: {django_pid}")
         # # Get process object
-        operation = psutil.Process(application_process_ID)
+        application_process_ID = int(script_first_value)
+        print("get datatype")
+        print(type(application_process_ID))
+        # operation = psutil.Process(application_process_ID)
 
-        # # Get memory usage
-        info_mem = operation.memory_info()
-        usage_mem_mb = info_mem.rss / 1024 / 1024
+        # # # Get memory usage
+        # info_mem = operation.memory_info()
+        # usage_mem_mb = info_mem.rss / 1024 / 1024
         
-        return usage_mem_mb
+        #return usage_mem_mb
+        return 3
         # if usage_mem_mb > benchmarkValue:
         #     raise ValueError(f"Analysis failed.")
         # else:
