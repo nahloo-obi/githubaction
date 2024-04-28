@@ -5,9 +5,10 @@ import sys
 def get_ram_usage():
     try:
         django_pid = None
-        
+
         for process in psutil.process_iter(['pid', 'name']):
-            
+            print("Process info:", process.info)
+
         # Check if the process name matches 'python' and 'manage.py'
             if 'python' in process.info['name'] and 'manage.py' in process.info['name']:
                 # Get the PID of the Django process
