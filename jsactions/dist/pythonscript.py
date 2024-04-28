@@ -4,12 +4,12 @@ import sys
 
 def get_ram_usage():
     try:
-        # for process in psutil.process_iter(['pid', 'name']):
+        for process in psutil.process_iter(['pid', 'name']):
             
-        # # Check if the process name matches 'python' and 'manage.py'
-        #     if 'python' in process.info['name'] and 'manage.py' in process.info['name']:
-        #         # Get the PID of the Django process
-        #         django_pid = process.info['pid']
+        # Check if the process name matches 'python' and 'manage.py'
+            if 'python' in process.info['name'] and 'manage.py' in process.info['name']:
+                # Get the PID of the Django process
+                django_pid = process.info['pid']
         
         input_value = sys.argv[1]
         # if input_value == django_pid:
