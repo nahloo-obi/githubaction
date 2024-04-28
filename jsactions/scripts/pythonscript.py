@@ -22,7 +22,9 @@ def get_ram_usage():
         # else:
         #     return benchmarkValue
         # print('here in python')
-        # print(input_value)
+        print(input_value)
+        print(input_value2)
+
         if django_pid:
             return django_pid
         else:
