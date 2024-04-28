@@ -31118,6 +31118,7 @@ const getScriptResult = execSync(`python ${path_to_script} ${getBenchmarkValue}`
 //const getScriptResult = execSync(`python ${path_to_script} ${pid} ${getBenchmarkValue}`).toString().trim();
 
 console.log('Result of Python script:', getScriptResult);
+
 core.setOutput("scriptresult", getScriptResult);
 
 process.exit(0); // Exit with success status code

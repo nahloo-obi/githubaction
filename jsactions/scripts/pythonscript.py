@@ -19,8 +19,8 @@ def get_ram_usage():
         #     return input_value
         # else:
         #     return benchmarkValue
-        print('here in python')
-        print(input_value)
+        # print('here in python')
+        # print(input_value)
         return input_value
 
         # print(f"Django Process PID: {django_pid}")
