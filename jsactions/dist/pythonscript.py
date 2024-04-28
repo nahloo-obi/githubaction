@@ -1,15 +1,14 @@
 import psutil
 import sys
 import requests
-from multiprocessing import Process
-import queue
+import multiprocessing as mp
+import time
 
 ram_usage_list = []
-q = queue.Queue()
 
-def get_ram_usage():
+def get_ram_usage(stop_signal):
     try:
-        while True:
+        while not stop_signal.is_set():
             #get script arguments from javascript
             script_first_value = sys.argv[1]
             BENCHMARK_VALUE = sys.argv[2]
@@ -44,10 +43,12 @@ def make_request(url, requestbody, headers, method):
 
     
 if __name__ == "__main__":
+    tasks = mp.Queue()
     # Start monitoring RAM usage in a separate process
-    stop_signal = queue.Event()
-    p = Process(target=get_ram_usage, args=(stop_signal,))
+    stop_signal = mp.Event()
+    p = mp.Process(target=get_ram_usage, args=(stop_signal,))
     p.start()
+    time.sleep(5000)
 
     # Make your request or do other operations here
     # Example:
