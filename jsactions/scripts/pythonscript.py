@@ -50,10 +50,7 @@ import sys
 import sys
 
 def main():
-    # Check if an argument was provided
-    if len(sys.argv) < 2:
-        print("Usage: python script.py <input>")
-        sys.exit(1)
+    
     
     # Get the input argument
     input_value = sys.argv[1]
