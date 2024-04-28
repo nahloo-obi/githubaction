@@ -1,13 +1,13 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Performance Analysis'
+description: 'Action to analysis the applications performance'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  benchmark:  # id of input
+    description: 'Set ram usage benchmark'
     required: true
-    default: 'World'
+    default: '100'
 outputs:
-  scriptresult: # id of output
-    description: 'The result gotten from the python script'
+  performanceresult: # id of output
+    description: 'The result gotten from the performance analysis'
 runs:
   using: 'node20'
   main: 'dist/index.js'
