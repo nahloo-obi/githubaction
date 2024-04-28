@@ -31119,7 +31119,7 @@ const getScriptResult = execSync(`python ${path_to_script} ${getBenchmarkValue}`
 
 console.log('Result of Python script:', getScriptResult);
 
-core.setOutput("scriptresult", getScriptResult);
+core.setOutput("performanceresult", getScriptResult);
 
 process.exit(0); // Exit with success status code
 
