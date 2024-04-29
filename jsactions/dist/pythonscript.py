@@ -1,8 +1,8 @@
 import psutil
 import sys
-import requests
-import multiprocessing as mp
-import time
+#import requests
+#import multiprocessing as mp
+#import time
 
 
 def get_ram_usage():
