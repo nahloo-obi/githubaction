@@ -31113,18 +31113,10 @@ console.log('benchmark value:', getBenchmarkValue);
 
 // Execute the Python script with the input value using the shell command
 const getScriptResult = execSync(`python ${path_to_script} ${processId} ${getBenchmarkValue}`).toString().trim();
-console.log('Result of ram usage hereee:', getScriptResult);
+console.log('Your application consumes this amount of ram :', getScriptResult);
 
 core.setOutput("performanceresult", getScriptResult);
 
-// if (pid && getBenchmarkValue) {
-//     const getScriptResult = execSync(`python ${path_to_script} ${processId} ${getBenchmarkValue}`).toString().trim();
-//     // Process the result as needed
-//     core.setOutput("performanceresult", getScriptResult);
-
-// } else {
-//     console.error('pid or getBenchmarkValue is undefined or null');
-// }
 
 
 process.exit(0); // Exit with success status code
@@ -31134,23 +31126,6 @@ process.exit(0); // Exit with success status code
 } catch (error) {
   core.setFailed(error.message);
 }
-
-
-
-// try {
-
-// const getValue = core.getInput('who-to-greet');
-// const path_to_script = path.join(__dirname, 'scripts', 'pythonscript.py');
-
-// // Execute the Python script with the input value using the shell command
-// const getScriptResult = execSync(`python ${path_to_script} ${getValue}`).toString().trim();
-// console.log('Result of Python script:', getScriptResult);
-// core.setOutput("scriptresult", getScriptResult);
-// process.exit(0); // Exit with success status code
-
-// } catch (error) {
-//   core.setFailed(error.message);
-// }
 
 })();
 
