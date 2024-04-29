@@ -27,7 +27,7 @@ def get_ram_usage():
 
         #return ram_usage_list
         
-        if usage_mem_mb > BENCHMARK_VALUE:
+        if usage_mem_mb > int(BENCHMARK_VALUE):
             raise ValueError(f"Application ram usage exceeded benchmark.")
         else:
             return usage_mem_mb
